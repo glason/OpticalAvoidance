@@ -7,14 +7,19 @@
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include<opencv2/highgui/highgui.hpp>
+#include<stdio.h>
+#include<math.h>
 #include"video.h"
 #include"pyrlk.h"
 #include"farneBack.h"
 
 using namespace cv;
 using namespace std;
-int main(int argc, char** argv) {
-	farneBack("test.avi");
+
+int main() {
+//	farneBack("flight.mp4");
+//	record("record.avi");
+	farneBack("iphone.mov");
 	return 0;
 }
 

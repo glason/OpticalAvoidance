@@ -7,6 +7,7 @@ CPP_SRCS += \
 ../src/farneBack.cpp \
 ../src/main.cpp \
 ../src/motion2color.cpp \
+../src/navigation.cpp \
 ../src/pyrlk.cpp \
 ../src/video.cpp 
 
@@ -14,6 +15,7 @@ OBJS += \
 ./src/farneBack.o \
 ./src/main.o \
 ./src/motion2color.o \
+./src/navigation.o \
 ./src/pyrlk.o \
 ./src/video.o 
 
@@ -21,6 +23,7 @@ CPP_DEPS += \
 ./src/farneBack.d \
 ./src/main.d \
 ./src/motion2color.d \
+./src/navigation.d \
 ./src/pyrlk.d \
 ./src/video.d 
 

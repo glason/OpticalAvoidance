@@ -18,8 +18,17 @@ using namespace cv;
 
 int pyrLK(string input) {
 	VideoCapture cap(input);
+	VideoWriter writer;
 	if (!cap.isOpened()) {
 		cout << "open input video error!" << endl;
+		return -1;
+	}
+	writer.open("pyrLK.avi", CV_FOURCC('P', 'I', 'M', '1'),
+			cap.get(CV_CAP_PROP_FPS),
+			Size((int) cap.get(CV_CAP_PROP_FRAME_WIDTH),
+					(int) cap.get(CV_CAP_PROP_FRAME_HEIGHT)), true);
+	if (!writer.isOpened()) {
+		cout << "output file open error!" << endl;
 		return -1;
 	}
 	TermCriteria termcrit(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 20, 0.03);
@@ -62,6 +71,7 @@ int pyrLK(string input) {
 			}
 			points[1].resize(k);
 		}
+		writer << image;
 		imshow("pyrLK", image);
 
 		if (waitKey(10) >= 0)
